@@ -25,6 +25,7 @@ class _CreateTaskButtonState extends ConsumerState<CreateTaskButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
+      key: const ValueKey('submitBtn'),
       onPressed: () {
         showModalBottomSheet(
           context: context,
@@ -37,6 +38,7 @@ class _CreateTaskButtonState extends ConsumerState<CreateTaskButton> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
+                      key: const ValueKey('title'),
                       validator: (value) {
                         if (value != null && value.isEmpty) {
                           return 'Please enter title';
